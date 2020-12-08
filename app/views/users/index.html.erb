@@ -1,0 +1,22 @@
+<div class='container'>
+  <div class='jumbotron=fluid'>
+    <h1>Application Tracker Application</h1>
+
+    <% if !logged_in? %>
+
+    <%= link_to "Sign Up", signup_path %> |
+
+    <%= link_to "Login", login_path %> |
+
+    <%= link_to "Sign in Via Google", "/auth/google_oauth2" %> 
+
+    <% else %>
+  
+  <h1>You should only see this if you are logged in</h1>
+
+
+    <% end %>
+  
+  
+  </div>
+</div>

@@ -4,12 +4,13 @@ Rails.application.routes.draw do
 
   root 'sessions#home'
   get '/signup' => 'users#new'
+  post '/signup', to: 'users#create'
   get '/login' => 'sessions#new'
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
   match '/auth/:provider/callback', to: 'sessions#googlecreate', via: %i[get post], as: 'google'
-  get '/auth/google_oauth2/callback' => 'sessions#googlecreate'
+  get '/auth/google_oauth2' => 'sessions#googlecreate'
 
   resources :users
 end

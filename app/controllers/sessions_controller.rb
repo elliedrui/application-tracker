@@ -33,7 +33,7 @@ class SessionsController < ApplicationController
       @user.last_name = auth['info']['last_name']
       @user.email = auth['info']['email']
       @user.uid = auth['uid']
-      @user.password = auth['uid']
+      @user.password = SecureRandom.hex
       @user.save
       session[:user_id] = @user.id  #actually log em in
 

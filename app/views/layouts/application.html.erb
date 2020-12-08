@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel='shortcut icon' type='image/jpg' href="/public/favicon.ico?" />
     <title>ApplicationTracker</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,6 +11,21 @@
   </head>
 
   <body>
-    <%= yield %>
+  <div class="container">
+  <div class="jumbotron-fluid">
+    <header>
+    
+      <%= render 'layouts/navigation' %>
+    </header>
+    
+    <main role="main">
+      <%= content_for?(:content) ? yield(:content) : yield %>
+    </main>
+
+    <footer class="branding">    
+      <br><br>
+      <small>&copy; 2020 <strong>Job Application Tracker</strong><img src="favicon.ico?"/></small>
+    </footer>
+
   </body>
 </html>
