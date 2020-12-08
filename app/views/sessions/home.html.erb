@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="jumbotron-fluid">
+    <h1>Application Tracker</h1>
+
+    <% if !logged_in? %>
+
+    <%= link_to "Sign Up", signup_path %> |
+
+    <%= link_to "Login", login_path %> |
+
+    <%= link_to "Sign in Via Google", "/auth/google_oauth2" %> 
+
+    <% else %>
+
+    <h1>Management Dashboard</h1>
+
+    <p>nothing to see here this is sessions home erb file</p>
+    <% end %>
+
+  </div>
+</div>
