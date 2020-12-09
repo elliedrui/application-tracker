@@ -1,7 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This web application is a rails app designed to allow me to track my job applications and the status of each.
 
 Things you may want to cover:
 
