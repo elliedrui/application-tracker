@@ -1,0 +1,18 @@
+<%= form_with model: company, local: true do |f| %>
+  <%= render partial: 'layouts/errors', locals: {object: company} %>
+
+  <br><br>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br><br>
+  <%= f.label :website %>
+  <%= f.text_field :website %>
+  <br><br>
+  <%= f.label :notes %>
+  <%= f.text_field :notes %>
+  <br><br>
+
+  <%= f.submit "Submit", disable_with: 'Submiting...' %>
+
+<% end %>
