@@ -1,0 +1,12 @@
+    <h2>Open Positions:</h2>
+    <% @open_positions.each do |l|%>
+      <u><%=link_to l.title, l, :class => "btn btn-primary btn-sm" %></u>
+    
+      <%= link_to  "Edit Open Position", edit_open_position_path(l), :class => "btn btn-primary btn-sm" %><br><br><%= button_to "Delete Open Position", open_position_path(l), method: :delete, :class => "btn btn-primary btn-sm" %><br><br>
+    <%end%>
+  </div>
+  
+    <div class="jumbotron-fluid">
+        <p><%= link_to  "Create New Open Position", new_open_position_path, :class => "btn btn-primary btn-sm"  %></p>
+    </div> 
+</div>

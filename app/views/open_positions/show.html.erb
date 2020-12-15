@@ -1,0 +1,11 @@
+<br><br>
+<big>Open Position: </big> <big><%= @open_position.title %></big><br>
+<big>URL: </big> <big><%= @open_position.url %></big><br>
+<big>Compensation: </big> <big><%= @open_position.compensation %></big><br>
+<big>Remote?: </big> <big><%= @open_position.remote %></big><br>
+<big>Status: </big> <big><%= @open_position.status %></big><br>
+<big>Notes: </big> <big><%= @open_position.notes %></big>
+<big>Company: </big> <big><%= @open_position.company_id %></big><br>
+
+<br><br>
+<h4><%=  link_to "Back to Companies", companies_path, :class => "btn btn-primary btn-sm" %> | <%=  link_to "Back to Open Positions", open_positions_path, :class => "btn btn-primary btn-sm" %></h4>
