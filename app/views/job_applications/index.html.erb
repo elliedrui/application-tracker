@@ -1,0 +1,12 @@
+    <h2>Applications:</h2>
+    <% @job_applications.each do |l|%>
+      <u><%=link_to l.astitle, l, :class => "btn btn-primary btn-sm" %></u>
+    
+      <%= link_to  "Edit Job Application", edit_job_application_path(l), :class => "btn btn-primary btn-sm" %><br><br><%= button_to "Delete Job Application", job_application_path(l), method: :delete, :class => "btn btn-primary btn-sm" %><br><br>
+    <%end%>
+  </div>
+  
+    <div class="jumbotron-fluid">
+        <p><%= link_to  "Create New Job Application", new_job_application_path, :class => "btn btn-primary btn-sm"  %></p>
+    </div> 
+</div>
