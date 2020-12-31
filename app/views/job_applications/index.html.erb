@@ -1,8 +1,9 @@
     <h2>Applications:</h2>
     <% @job_applications.each do |l|%>
-      <u><%=link_to l.astitle, l, :class => "btn btn-primary btn-sm" %></u>
+      <u><%=link_to OpenPosition.find_by_id(l.open_position_id).title, l%></u>
+      <br>
     
-      <%= link_to  "Edit Job Application", edit_job_application_path(l), :class => "btn btn-primary btn-sm" %><br><br><%= button_to "Delete Job Application", job_application_path(l), method: :delete, :class => "btn btn-primary btn-sm" %><br><br>
+      <%= link_to  "Edit Job Application", edit_job_application_path(l), :class => "btn-primary" %><%= button_to "Delete Job Application", job_application_path(l), method: :delete, :class => "btn-primary" %><br><br>
     <%end%>
   </div>
   

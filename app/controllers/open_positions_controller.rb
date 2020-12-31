@@ -8,6 +8,8 @@ class OpenPositionsController < ApplicationController
   end
 
   def show
+    @open_position = OpenPosition.find(params[:id])
+    render open_position_path(@open_position)
   end
 
   def new

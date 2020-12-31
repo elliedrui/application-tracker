@@ -2,3 +2,5 @@ This application is designed to help track application status as well as other m
 
 * add linkedin oauth login
 * create method to scrape jobs sites or job postings to import the information
+
+dont forget to add logic to the show methods

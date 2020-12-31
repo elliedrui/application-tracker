@@ -2,19 +2,33 @@
   <div class="jumbotron-fluid">
     <h1>Application Tracker</h1>
 
-    <% if !logged_in? %>
+    <% if logged_in? %>
 
-    <%= link_to "Sign Up", signup_path %> |
-
-    <%= link_to "Login", login_path %> |
-
-    <%= link_to "Sign in Via Google", "/auth/google_oauth2" %> 
-
+      <h1>Management Dashboard</h1>
+      <p>
+        Welcome <%= current_user.first_name %>.
+        <br>
+        There are <%= Company.count %> companies listed.
+        <br>
+        There are <%= OpenPosition.count %> open positions available to apply to, <%= JobApplication.count %> of which you have applied to .
+        <br>
+        You have <%= JobApplication.count %> total open job applications. 
+        <br>
+      </p>
+      <p>nothing to see here this is sessions home erb file
+        <br>
+        <%= link_to "Companies", '/companies', class: 'nav-link' %><br>
+        <%= link_to "Open Positions", '/open_positions', class: 'nav-link' %><br>
+        <%= link_to "Job Applications", '/job_applications', class: 'nav-link' %><br>  
+      </p>
     <% else %>
 
-    <h1>Management Dashboard</h1>
+      <%= link_to "Sign Up", signup_path %> |
 
-    <p>nothing to see here this is sessions home erb file</p>
+      <%= link_to "Login", login_path %> |
+
+      <%= link_to "Sign in Via Google", "/auth/google_oauth2" %> 
+  
     <% end %>
 
   </div>

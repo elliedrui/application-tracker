@@ -40,7 +40,7 @@ class JobApplicationsController < ApplicationController
   end
 
   def job_application_params
-    params.require(:job_application).permit(:applied_date, :status, :open_position_id, :notes, :url)
+    params.require(:job_application).permit(:status, :applied_date, :had_interview?, :url, :notes, :open_position_id)
   end
 
 end
