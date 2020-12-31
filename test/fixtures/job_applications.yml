@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  applied_date: 2020-12-16
+  status: MyString
+  had_interview?: false
+  open_position: 
+  notes: MyString
+  url: MyString
+
+two:
+  applied_date: 2020-12-16
+  status: MyString
+  had_interview?: false
+  open_position: 
+  notes: MyString
+  url: MyString

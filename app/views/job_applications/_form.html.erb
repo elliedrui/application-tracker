@@ -1,0 +1,30 @@
+<%= form_with model: @job_application, local: true do |f| %>
+  <%= render partial: 'layouts/errors', locals: {object: @job_application} %>
+
+  <br><br>
+
+  <%= f.label :status %>
+  <%= f.text_field :status %>
+  <br><br>
+  <%= f.label :applied_date %>
+  <%= f.date_field :applied_date %>
+  <br><br>
+  <%= f.label :had_interview? %>
+  <%= f.check_box :had_interview? %>
+  
+  <br><br>
+  <%= f.label :url %>
+  <%= f.text_field :url %>
+  <br><br>
+  <%= f.label :notes %>
+  <%= f.text_field :notes %>
+  <br><br>
+  <%= f.label :open_positions %>
+  <%= f.collection_select :open_position_id, OpenPosition.all, :id, :title, include_blank: true %>
+  <br><br>
+
+ 
+
+  <%= f.submit "Submit", disable_with: 'Submitting...' %>
+
+<% end %>

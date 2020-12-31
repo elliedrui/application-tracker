@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  url: MyString
+  compensation: MyString
+  remote: false
+  status: MyString
+  company: one
+
+two:
+  title: MyString
+  url: MyString
+  compensation: MyString
+  remote: false
+  status: MyString
+  company: two

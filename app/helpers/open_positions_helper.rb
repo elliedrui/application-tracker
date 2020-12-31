@@ -1,0 +1,2 @@
+module OpenPositionsHelper
+end

@@ -10,10 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_08_190218) do
+ActiveRecord::Schema.define(version: 2020_12_17_024732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.string "website"
+    t.text "notes"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "job_applications", force: :cascade do |t|
+    t.date "applied_date"
+    t.string "status"
+    t.boolean "had_interview?"
+    t.bigint "open_position_id", null: false
+    t.string "notes"
+    t.string "url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["open_position_id"], name: "index_job_applications_on_open_position_id"
+  end
+
+  create_table "open_positions", force: :cascade do |t|
+    t.string "title"
+    t.string "url"
+    t.string "compensation"
+    t.boolean "remote"
+    t.string "status"
+    t.bigint "company_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.text "notes"
+    t.index ["company_id"], name: "index_open_positions_on_company_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email"
@@ -25,4 +58,6 @@ ActiveRecord::Schema.define(version: 2020_12_08_190218) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "job_applications", "open_positions"
+  add_foreign_key "open_positions", "companies"
 end
